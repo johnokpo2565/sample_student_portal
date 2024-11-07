@@ -1,0 +1,35 @@
+{% extends 'core/dashboard.html' %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="container">
+            <form action="." method="post">
+                {% csrf_token %}
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                        <label for="">Age</label>
+                        <input type="number" name="age" class="form-control" value="{{user.age}}">
+                      </div>
+
+                      <div class="row">
+                        <label for="">Address</label>
+                        <textarea name="address" class="form-control">
+                            {{user.address}}
+                        </textarea>
+                      </div>
+
+                    </div>
+                 </div> 
+
+                 <div class="row">
+                    <button type="submit" class="btn btn-sm  btn-dark w-50 mt-3">Update Profile</button>
+                 </div>
+            </form>
+
+            </div>
+        </div>
+    
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div style="height:100vh;">
+
+            <style>
+                .landing-section {
+                    height: 95vh;
+                    display: flex;
+                    align-items: center;
+                    background-color: #f5f5f5;
+                }
+                .content-left {
+                    padding: 20px;
+                }
+                .fancy-heading {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    color: #4a4a4a;
+                    text-transform: uppercase;
+                    line-height: 1.2;
+                }
+                .description {
+                    margin-top: 20px;
+                    font-size: 1.2rem;
+                    color: #6c757d;
+                }
+
+                .student-image {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+            </style>
+
+            <!-- <div class="row my-4">
+                <h5 class="mx-auto">Index</h5>
+            </div> -->
+
+            {% load static %}
+            <div class="landing-section mt-3">
+                <div class="row w-100">
+                    <!-- Left Content -->
+                    <div class="col-md-6 content-left d-flex flex-column justify-content-center">
+                        <h1 class="fancy-heading">Empowering Future Leaders</h1>
+                        <p class="description">Join a community dedicated to academic excellence and personal growth. Our programs help students reach their full potential and prepare them for success.</p>
+                        <a href="{% url 'core:login' %}" class="btn btn-lg btn-success w-75 mx-auto">Open</a>
+                    </div>
+                    <!-- Right Image -->
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <img src="{%  static 'images/student.jpg' %}" alt="School Student" class="student-image">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+    <div class="container mb-4" style="height:80vh; background-image: url('../../static/images/student.jpg'); background-repeat: no-repeat;
+    background-size: cover;">
+        <div class="mt-3 mb-3">
+            <div class="container mt-3 mb-3">
+                <div class="row mx-auto w-25  py-4">
+
+                    <div class="row mt-2  mx-auto">
+                       <h5 class="display-5 text-white">Login</h5>
+                    </div>
+                    
+                   <form action="." method="post">
+                    {% csrf_token %}
+                   
+
+                    <div class="row mt-2">
+                        <label class="text-white" for="">email</label>
+                        <input class="form-control" type="text" name="email" >
+                    </div>
+
+
+
+                    <div class="row mt-2">
+                        <label class="text-white" for="">password</label>
+                        <input class="form-control" type="password" name="password" >
+                    </div>
+
+
+                    <div class="row mt-2">
+                        <button class="btn btn-success btn-sm w-50" type="submit" > Login </button>
+                    </div>
+                    
+                    <div class="row mt-2">
+                        <span class="text-white">Do not have an account?</span>
+                        <a href="{% url 'core:register' %}" style="text-decoration:underline; color: white;">create new account</a>
+                    </div>
+
+
+                   </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

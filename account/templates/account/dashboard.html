@@ -1,0 +1,69 @@
+{% extends 'core/dashboard.html' %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="container">
+            <div class="row">
+              
+                <div class="col-md-4" >
+                    <a href="#" style="text-decoration:none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <span class="card-title">
+                                    <h6 class="display-6" style="font-size:30px;">Check Semester Results</h6>
+                                </span>
+                               <span>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Quibusdam nobis, accusamus 
+                                eveniet a voluptatum quam dicta 
+                                adipisci optio ea magni sit, saepe 
+                                aliquam, distinctio quasi quod? 
+                                Error tempore vitae ipsam.
+                               </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                
+
+                <div class="col-md-4" >
+                    <a href="{% url  'account:profile' user.id %}" style="text-decoration:none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <span class="card-title">
+                                    <h6 class="display-6" style="font-size:30px;">Profile Pics</h6>
+                                </span>
+                               <span>
+                                {% for image in user.profilepics.all %}
+                                    <div class="">
+                                        <img src="{{image.attachment.url}}" alt="" class="rounded w-50">
+                                    </div>
+                                {% endfor %}
+                               </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="col-md-4" >
+                    <a href="{% url 'account:update_profile' user.id %}" style="text-decoration:none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <span class="card-title">
+                                    <h6 class="display-6" style="font-size:30px;">Update Profile</h6>
+                                </span>
+                               <span>
+                               Use this link to update your profile details
+                               </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
